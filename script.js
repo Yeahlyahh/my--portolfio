@@ -1,6 +1,5 @@
 (function () {
 
-  // ===== EmailJS Form =====
   emailjs.init("u7Xtphk5XPAzBXwJc");
 
   const form = document.getElementById("form-message");
@@ -28,15 +27,43 @@
     });
   }
 
-  // ===== Header Scroll =====
   const header = document.querySelector("header");
+  const navElement = document.querySelector("header nav");
+
   if (header) {
     window.addEventListener("scroll", () => {
       header.classList.toggle("scrolled", window.scrollY > 50);
     });
+
+    const toggleBtn = document.createElement("button");
+    toggleBtn.className = "mobile-menu-toggle";
+    toggleBtn.setAttribute("aria-label", "Toggle navigation");
+    toggleBtn.innerHTML = "<span></span><span></span><span></span>";
+    header.appendChild(toggleBtn);
+
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (navElement) {
+        navElement.classList.toggle("active");
+      }
+    });
+
+    if (navElement) {
+      const mobileLinks = navElement.querySelectorAll("ul.nav-links li a");
+      mobileLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          navElement.classList.remove("active");
+        });
+      });
+    }
+
+    document.addEventListener("click", (e) => {
+      if (navElement && !header.contains(e.target)) {
+        navElement.classList.remove("active");
+      }
+    });
   }
 
-  // ===== Active Nav Link Highlight on Scroll =====
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll("header nav ul.nav-links li a");
 
@@ -60,7 +87,6 @@
   window.addEventListener("scroll", () => { requestAnimationFrame(highlightNav); });
   highlightNav();
 
-  // ===== Smooth scroll for nav links =====
   navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       const href = link.getAttribute("href");
@@ -72,7 +98,6 @@
     });
   });
 
-  // ===== Image Zoom Modal =====
   const zoomableImages = document.querySelectorAll("img[data-zoomable]");
   if (zoomableImages.length > 0) {
     const modal = document.createElement("div");
@@ -99,7 +124,6 @@
     window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
   }
 
-  // ===== Certificate Slider — supports multiple sliders via data-target =====
   document.querySelectorAll(".cert-prev, .cert-next").forEach(btn => {
     btn.addEventListener("click", () => {
       const targetId = btn.getAttribute("data-target");
@@ -116,7 +140,6 @@
     });
   });
 
-  // ===== Filmstrip Carousel =====
   const filmTrack = document.getElementById("filmstripTrack");
   const filmNext = document.getElementById("film-next");
   const filmPrev = document.getElementById("film-prev");
@@ -163,11 +186,6 @@
     setTimeout(() => setActiveImage(0), 100);
   }
 
-  // =============================================================
-  // ===== INTERSECTION OBSERVER — CINEMATIC SCROLL ANIMATIONS =====
-  // =============================================================
-
-  // Helper: create an IntersectionObserver with a callback
   function createObserver(callback, options = {}) {
     return new IntersectionObserver(callback, {
       threshold: options.threshold || 0.15,
@@ -175,10 +193,6 @@
     });
   }
 
-  // -------------------------------------------------------
-  // 1. PROJECT CARDS — 3D Flip-in from bottom with stagger
-  //    Odd cards come from left, even from right
-  // -------------------------------------------------------
   const projectCards = document.querySelectorAll(".project");
   projectCards.forEach((card, i) => {
     const fromLeft = i % 2 === 0;
@@ -211,9 +225,6 @@
       })
     : null;
 
-  // -------------------------------------------------------
-  // 2. HERO TEXT — Typewriter on the h3 subtitle
-  // -------------------------------------------------------
   const heroH3 = document.querySelector(".hero-text h3");
   if (heroH3) {
     const originalText = heroH3.textContent.trim();
@@ -230,16 +241,12 @@
         charIndex++;
         setTimeout(typeWriter, 55);
       } else {
-        // Blinking cursor stop after done
         setTimeout(() => { heroH3.style.borderRight = "none"; }, 1200);
       }
     }
     setTimeout(typeWriter, 900);
   }
 
-  // -------------------------------------------------------
-  // 3. SOFT SKILLS TAGS — Pop-in one by one (hero)
-  // -------------------------------------------------------
   const softTags = document.querySelectorAll(".soft-skills-tags span");
   softTags.forEach((tag, i) => {
     tag.style.cssText += `
@@ -253,9 +260,6 @@
     }, 800 + i * 120);
   });
 
-  // -------------------------------------------------------
-  // 4. HERO SOCIAL ICONS — Slide up staggered
-  // -------------------------------------------------------
   const socialIcons = document.querySelectorAll(".hero .social-links a");
   socialIcons.forEach((icon, i) => {
     icon.style.cssText += `
@@ -269,9 +273,6 @@
     }, 1200 + i * 100);
   });
 
-  // -------------------------------------------------------
-  // 5. TIMELINE NODES — Slide in from left with bounce
-  // -------------------------------------------------------
   const timelineNodes = document.querySelectorAll(".timeline-node");
   timelineNodes.forEach((node, i) => {
     node.style.cssText += `
@@ -291,9 +292,6 @@
   }, { threshold: 0.2 });
   timelineNodes.forEach(node => timelineObs.observe(node));
 
-  // -------------------------------------------------------
-  // 6. CERT CARDS — Zoom-in with blur unblur
-  // -------------------------------------------------------
   const certCards = document.querySelectorAll(".certificate-card");
   certCards.forEach((card, i) => {
     card.style.cssText += `
@@ -315,9 +313,6 @@
   }, { threshold: 0.1 });
   certCards.forEach(card => certObs.observe(card));
 
-  // -------------------------------------------------------
-  // 7. TESTIMONIAL CARDS — Flip card reveal (rotateX)
-  // -------------------------------------------------------
   const testimonialCards = document.querySelectorAll(".testimonial-card");
   testimonialCards.forEach((card, i) => {
     card.style.cssText += `
@@ -338,9 +333,6 @@
   }, { threshold: 0.15 });
   testimonialCards.forEach(card => testObs.observe(card));
 
-  // -------------------------------------------------------
-  // 8. EDUCATION & EXPERIENCE CARDS — Slide from opposite sides
-  // -------------------------------------------------------
   const leftCol = document.querySelector(".left-column .layered-glass-card");
   const rightCol = document.querySelector(".right-column .layered-glass-card");
 
@@ -376,9 +368,6 @@
     }, { threshold: 0.1 }).observe(rightCol);
   }
 
-  // -------------------------------------------------------
-  // 9. TECH TAGS — Wave pop-in inside About section
-  // -------------------------------------------------------
   const techTags = document.querySelectorAll(".tech-tags span");
   techTags.forEach((tag, i) => {
     tag.style.cssText += `
@@ -398,9 +387,6 @@
   }, { threshold: 0.3 });
   techTags.forEach(tag => techObs.observe(tag));
 
-  // -------------------------------------------------------
-  // 10. SECTION TITLES — Glide up with letter-spacing collapse
-  // -------------------------------------------------------
   const sectionTitles = document.querySelectorAll(
     "#certifications h2, .projects-title, .section-title-center, .contact-title, #resume-split-page h2"
   );
@@ -424,9 +410,6 @@
   }, { threshold: 0.3 });
   sectionTitles.forEach(t => titleObs.observe(t));
 
-  // -------------------------------------------------------
-  // 11. CONTACT FORM INPUTS — Slide in one by one
-  // -------------------------------------------------------
   const contactInputs = document.querySelectorAll(".contact-form input, .contact-form textarea, .contact-form button");
   contactInputs.forEach((el, i) => {
     el.style.cssText += `
@@ -446,9 +429,6 @@
   }, { threshold: 0.2 });
   contactInputs.forEach(el => formObs.observe(el));
 
-  // -------------------------------------------------------
-  // 12. CONTACT INFO ITEMS — Fade in from right
-  // -------------------------------------------------------
   const contactInfoItems = document.querySelectorAll(".contact-info p, .alt-contact-btn");
   contactInfoItems.forEach((el, i) => {
     el.style.cssText += `
@@ -468,9 +448,6 @@
   }, { threshold: 0.2 });
   contactInfoItems.forEach(el => contactInfoObs.observe(el));
 
-  // -------------------------------------------------------
-  // 13. OPEN TO WORK BADGE — Bounce in on load
-  // -------------------------------------------------------
   const badge = document.querySelector(".open-to-work-badge");
   if (badge) {
     badge.style.cssText += `
@@ -485,9 +462,6 @@
     }, 400);
   }
 
-  // -------------------------------------------------------
-  // 14. HERO IMAGE — Scale + fade in
-  // -------------------------------------------------------
   const heroImg = document.querySelector(".hero-img img");
   if (heroImg) {
     heroImg.style.cssText += `
@@ -501,9 +475,6 @@
     }, 300);
   }
 
-  // -------------------------------------------------------
-  // 15. HERO H1 + H2 — Slide up on load
-  // -------------------------------------------------------
   const heroH1 = document.querySelector(".hero-text h1");
   const heroH2 = document.querySelector(".hero-text h2");
 
@@ -520,10 +491,6 @@
     }, 200 + i * 200);
   });
 
-  // -------------------------------------------------------
-  // 16. PROJECT LINKS BUTTONS — Slide up on hover parent
-  //     (Handled in CSS — just init hidden state here)
-  // -------------------------------------------------------
   const projLinks = document.querySelectorAll(".project-links");
   projLinks.forEach(links => {
     links.style.cssText += `
@@ -544,7 +511,6 @@
     }
   });
 
-  // ===== Scroll Reveal (legacy .reveal classes) =====
   const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
   function revealOnScroll() {
     const windowHeight = window.innerHeight;

@@ -1,4 +1,3 @@
-/* ===== Reset + Basic ===== */
 body, html {
   margin: 0;
   padding: 0;
@@ -7,7 +6,6 @@ body, html {
   overflow-x: hidden;
 }
 
-/* ===== Header ===== */
 header {
   position: fixed;
   top: 20px;
@@ -46,7 +44,7 @@ header nav ul.nav-links {
 }
 
 header nav ul.nav-links li a {
-  color: #fff !important;        
+  color: #fff !important;
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
@@ -71,7 +69,6 @@ header.scrolled {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* ===== Hero Section ===== */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -87,12 +84,11 @@ header.scrolled {
 
 .hero-text {
   flex: 1;
-  max-width: 500px; 
+  max-width: 500px;
   z-index: 1;
   margin-top: 0;
 }
 
-/* ✅ BAGO: Open to Work Badge */
 .open-to-work-badge {
   display: inline-flex;
   align-items: center;
@@ -131,7 +127,6 @@ header.scrolled {
   50% { box-shadow: 0 0 14px rgba(0, 230, 118, 0.35); }
 }
 
-/* ✅ BAGO: Soft Skills Tags */
 .soft-skills-tags {
   display: flex;
   flex-wrap: wrap;
@@ -263,7 +258,6 @@ header.scrolled {
   transform: translateY(-2px);
 }
 
-/* ✅ BAGO: Status available tag sa about */
 .status-available {
   color: #00e676;
   font-weight: 700;
@@ -298,7 +292,6 @@ header.scrolled {
   filter: brightness(0.6);
 }
 
-/* ===== Sections Global ===== */
 .section {
   width: 100%;
   padding: 80px 0;
@@ -335,7 +328,6 @@ header.scrolled {
   z-index: 0;
 }
 
-/* ===== About Section ===== */
 #about {
   display: flex;
   flex-direction: row;
@@ -360,7 +352,7 @@ header.scrolled {
   background: #0d0d0d;
   flex-shrink: 0;
   position: sticky;
-  top: 0; 
+  top: 0;
   height: 100vh;
   min-width: 0;
 }
@@ -380,11 +372,11 @@ header.scrolled {
   width: 130px;
   height: 130px;
   margin: 0 auto 12px;
-  border-radius: 24px; 
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-  transform: rotate(-3deg); 
+  transform: rotate(-3deg);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -406,19 +398,19 @@ header.scrolled {
 }
 
 .identity-text .subtitle {
-  font-size: 11px; 
+  font-size: 11px;
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
   letter-spacing: 2px;
   display: block;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .identity-text .quick-bio {
-  font-size: 13px; 
+  font-size: 13px;
   line-height: 1.4;
   color: #aaaaaa;
-  margin-bottom: 12px; 
+  margin-bottom: 12px;
 }
 
 .filmstrip-container {
@@ -530,7 +522,6 @@ header.scrolled {
   gap: 30px;
 }
 
-/* ===== Glass Card ===== */
 .layered-glass-card {
   background: rgba(255, 255, 255, 0.02) !important;
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
@@ -561,7 +552,7 @@ header.scrolled {
 }
 
 .layered-glass-card:hover .card-glow-indicator {
-  background: #ffcc00; 
+  background: #ffcc00;
 }
 
 .layered-glass-card h3 {
@@ -611,7 +602,6 @@ header.scrolled {
 
 .quick-info-meta strong { color: #ffcc00; }
 
-/* Skills */
 .skills-stack-wrapper {
   display: flex;
   flex-direction: column;
@@ -657,7 +647,6 @@ header.scrolled {
   object-fit: contain;
 }
 
-/* ===== Timeline ===== */
 .premium-timeline {
   display: flex;
   flex-direction: column;
@@ -715,7 +704,6 @@ header.scrolled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* ===== Split Resume Section ===== */
 #resume-split-page {
   background: #111;
   padding: 80px 0;
@@ -802,7 +790,6 @@ header.scrolled {
 
 .experience-details-list li { margin-bottom: 10px; }
 
-/* ===== Certifications ===== */
 #certifications {
   position: relative;
   background: #161616;
@@ -815,7 +802,6 @@ header.scrolled {
   margin-bottom: 10px;
 }
 
-/* ✅ BAGO: Category labels */
 .cert-category-label {
   font-size: 14px;
   font-weight: 700;
@@ -880,7 +866,6 @@ header.scrolled {
 
 .certificate-card:hover img { transform: scale(1.04); }
 
-/* ✅ BAGO: Certificate type badges */
 .cert-type-badge {
   display: inline-block;
   margin-top: auto;
@@ -948,7 +933,6 @@ header.scrolled {
   transform: scale(1.1);
 }
 
-/* ===== Image Zoom Modal ===== */
 .img-modal {
   display: none;
   position: fixed;
@@ -1001,7 +985,6 @@ header.scrolled {
   transform: scale(1.15) rotate(90deg);
 }
 
-/* ===== Projects ===== */
 #projects h2,
 #projects .projects-title {
   color: #fff;
@@ -1073,7 +1056,6 @@ header.scrolled {
   margin-bottom: 14px;
 }
 
-/* ✅ BAGO: Featured Project badge */
 .featured-project {
   border-color: rgba(255, 204, 0, 0.4);
   box-shadow: 0 6px 20px rgba(255, 204, 0, 0.1);
@@ -1093,7 +1075,6 @@ header.scrolled {
   letter-spacing: 0.5px;
 }
 
-/* ✅ BAGO: Project link buttons */
 .project-links {
   display: flex;
   gap: 10px;
@@ -1143,7 +1124,6 @@ header.scrolled {
   .project-list { grid-template-columns: 1fr; }
 }
 
-/* ===== ✅ BAGO: Testimonials Section ===== */
 #testimonials {
   position: relative;
   padding: 100px 0;
@@ -1237,7 +1217,6 @@ header.scrolled {
   color: #888;
 }
 
-/* ===== Contact ===== */
 #contact {
   position: relative;
   color: #fff;
@@ -1265,11 +1244,18 @@ header.scrolled {
 }
 
 .contact-container {
-  max-width: 1000px;
+  max-width: 850px; /* Pinaliit para mas compact */
   margin: auto;
-  text-align: left;
   position: relative;
   z-index: 1;
+  /* ✅ BAGO: Glassmorphism background para sa buong contact area */
+  background: rgba(17, 17, 17, 0.7);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .contact-title {
@@ -1280,7 +1266,7 @@ header.scrolled {
 }
 
 .contact-subtext {
-  margin-bottom: 60px;
+  margin-bottom: 40px; /* In-adjust ang spacing */
   text-align: center;
 }
 
@@ -1288,13 +1274,15 @@ header.scrolled {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  justify-content: flex-start;
+  justify-content: space-between; /* Para mag-align ang form at info */
+  align-items: flex-start;
 }
 
 .contact-info {
-  flex: 1 1 250px;
+  flex: 1 1 300px; /* Binigyan ng sapat na space */
   text-align: left;
   font-size: 18px;
+  min-width: 280px;
 }
 
 .contact-info p i {
@@ -1312,7 +1300,6 @@ header.scrolled {
 
 .contact-info a:hover { color: #ffcc00; }
 
-/* ✅ BAGO: Alt contact buttons */
 .contact-alt-btns {
   margin-top: 20px;
   display: flex;
@@ -1342,24 +1329,33 @@ header.scrolled {
 }
 
 .contact-form {
-  flex: 1 1 400px;
+  flex: 1.5 1 400px; /* Mas malaki ng kaunti ang form */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
+  min-width: 300px;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  max-width: 350px;
-  padding: 12px;
+  padding: 14px; /* Dinagdagan ang padding */
   border-radius: 8px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Nagdagdag ng subtle border */
   outline: none;
-  background: #333;
+  background: rgba(255, 255, 255, 0.05); /* Ginawang mas transparent */
   color: #fff;
   font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  box-sizing: border-box; /* Tinitiyak na tama ang sukat */
+}
+
+/* ✅ BAGO: Professional focus state */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
 }
 
 .contact-form textarea {
@@ -1367,8 +1363,12 @@ header.scrolled {
   resize: vertical;
 }
 
+/* ✅ BAGO: Mas magandang placeholder style */
 .contact-form input::placeholder,
-.contact-form textarea::placeholder { color: #ccc; }
+.contact-form textarea::placeholder { 
+  color: #999; 
+  opacity: 1;
+}
 
 .contact-form button {
   width: auto;
@@ -1384,7 +1384,6 @@ header.scrolled {
 
 .contact-form button:hover { background: #ff9900; }
 
-/* ===== Footer ===== */
 footer {
   background: black;
   text-align: center;
@@ -1394,7 +1393,6 @@ footer {
 
 footer p { margin: 0; color: white; }
 
-/* ===== Scroll Reveal ===== */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -1424,13 +1422,6 @@ footer p { margin: 0; color: white; }
   transform: translateX(0);
 }
 
-/* =================================== */
-/*  10. Contact Section (New Design)   */
-/* =================================== */
-
-
-
-/* ===== Responsive Fixes ===== */
 @media (max-width: 1024px) {
   .split-container {
     grid-template-columns: 1fr;
@@ -1477,8 +1468,171 @@ footer p { margin: 0; color: white; }
   .contact-form textarea { max-width: 100%; }
 }
 
+@media (max-width: 480px) {
+  /* ✅ FIX: I-adjust ang padding ng contact form sa maliliit na screen */
+  .contact-container { padding: 30px 20px; }
+}
+
 #certifications::before,
 #awards::before,
 #projects::before {
   display: none;
+}
+
+.mobile-menu-toggle { display: none; }
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1003;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform-origin: center;
+  }
+
+  header nav.active ~ .mobile-menu-toggle span:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+  }
+
+  header nav.active ~ .mobile-menu-toggle span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  header nav.active ~ .mobile-menu-toggle span:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+  }
+
+  .menu-toggle {
+    display: none !important;
+  }
+
+  header {
+    top: 15px;
+    width: 92%;
+    padding: 12px 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  header .logo img {
+    height: 32px;
+    position: relative;
+    z-index: 1002;
+  }
+
+  header nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 70px 20px 20px 20px;
+    box-sizing: border-box;
+    z-index: 1001;
+    display: none;
+  }
+
+  header nav.active {
+    display: block !important;
+  }
+
+  header nav ul.nav-links {
+    flex-direction: column !important;
+    gap: 15px !important;
+    width: 100%;
+    align-items: center;
+  }
+
+  header nav ul.nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  header nav ul.nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    position: relative;
+    z-index: 1005;
+    pointer-events: auto !important;
+  }
+
+  header:hover::after {
+    color: #ffcc00;
+  }
+
+  .hero {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 25px;
+    padding: 140px 20px 40px !important;
+    min-height: auto !important;
+  }
+
+  .hero-img {
+    order: 1 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .hero-img img {
+    max-width: 180px !important;
+    height: auto !important;
+    border-radius: 50% !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-text {
+    order: 2 !important;
+    max-width: 100% !important;
+    margin-top: 0 !important;
+    z-index: 2;
+  }
+
+  .hero-text h2 { font-size: 1.3rem !important; margin-bottom: 5px !important; }
+  .hero-text h1 { font-size: 2.3rem !important; margin: 5px 0 !important; }
+  .hero-text h3 { font-size: 1rem !important; font-weight: normal; opacity: 0.9; margin-bottom: 20px !important; }
+
+  .open-to-work-badge {
+    margin: 0 auto 15px auto !important;
+    font-size: 11px !important;
+    padding: 5px 14px !important;
+  }
+
+  .social-links {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 24px !important;
+    margin-top: 15px !important;
+  }
 }
